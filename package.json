@@ -1,11 +1,26 @@
 {
-  "name": "rename",
+  "name": "randomize-files",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typescript": "tsc",
+    "prompt": "node dist/prompt.js",
+    "start": "node dist/index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moazzamgodil/randomize-files.git"
+  },
+  "author": "Moazzam Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moazzamgodil/randomize-files/issues"
+  },
+  "homepage": "https://github.com/moazzamgodil/randomize-files#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.13",
+    "typescript": "^5.3.3"
+  }
 }
