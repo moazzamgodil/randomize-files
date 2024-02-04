@@ -11,5 +11,6 @@ declare const question4: () => Promise<unknown>;
 declare const question5: () => Promise<unknown>;
 declare const question6: () => Promise<unknown>;
 declare const question7: () => Promise<unknown>;
+declare const question8: () => Promise<unknown>;
 declare const main: () => Promise<void>;
 //# sourceMappingURL=prompt.d.ts.map

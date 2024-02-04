@@ -31,19 +31,29 @@ yarn add randomize-files
 ## Usage
 
 ```
-With * are required.
+Arguments
+=========
 
-from *
-to *
+from (required)     ->  The count where the randomized number should be started (e.g. if from = 15, that means the number should not be less than 15)
+to (required)       ->  The count where the randomized number should be ended (e.g. if to = 99, that means the number should not be greater than 99)
+json                ->  The folder or path of JSON files (e.g. The metadata files are located at /files/json, so the json = files/json)
+images              ->  The folder or path of images files (e.g. The images are located at /files/images, so the images = files/images)
+name                ->  The name of NFT in the metadata you want to update. (e.g. name = "MyNFT", so in the metadata, the name will become "MyNFT#1" for NFT number 1)
+description         ->  The description of NFT in the metadata you want to update.
+image               ->  The image URL of the NFT you want to update in the metadata. Normally, it's an IPFS URI where the image is hosted.
+removesource        ->  If you want to remove source files after randomization, pass true (default: false)
 ```
+
+#### Note
+If you want to randomize both JSON and image files, please make sure, the counting of both files is equal otherwise the randomization results in a bad one.
 
 #### Using (Passing Arguments)
 ```
 Command:
-npm run start -- from=[from count] to=[to count] json=[json folder OR path] images=[images folder OR path] name=[update name in metadata] description=[update description in metadata] image=[update image url path in metadata]
+npm run start -- from=[from count] to=[to count] json=[json folder OR path] images=[images folder OR path] name=[update name in metadata] description=[update description in metadata] image=[update image url path in metadata] removesource=[true OR false]
 
 Example:
-npm run start -- from=1 to=1000 json=files/json name="Hello World" description="This is description" image="https://example.com/ipfs"
+npm run start -- from=1 to=1000 json=files/json name="Hello World" description="This is description" image="https://example.com/ipfs" removesource=false
 ```
 
 #### Using (Prompt)
@@ -51,3 +61,7 @@ npm run start -- from=1 to=1000 json=files/json name="Hello World" description="
 Command:
 npm run prompt
 ```
+
+## Build
+
+After being randomized, the files are moved to the build folder with logs.

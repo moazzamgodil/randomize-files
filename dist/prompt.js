@@ -85,6 +85,17 @@ const question7 = () => {
         });
     });
 };
+const question8 = () => {
+    return new Promise((resolve, reject) => {
+        rl.question('Do you want to remove source files after randomization. This will permanently delete your files from source directory you provided (default: false): ', (answer) => {
+            if (!answer) {
+                answer = "false";
+            }
+            args.remove = answer;
+            resolve("");
+        });
+    });
+};
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield question1();
@@ -94,6 +105,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         yield question5();
         yield question6();
         yield question7();
+        yield question8();
         let execString = "npm run start -- ";
         execString += (args === null || args === void 0 ? void 0 : args.from) ? `from=${args === null || args === void 0 ? void 0 : args.from} ` : "";
         execString += (args === null || args === void 0 ? void 0 : args.to) ? `to=${args === null || args === void 0 ? void 0 : args.to} ` : "";
@@ -102,6 +114,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         execString += (args === null || args === void 0 ? void 0 : args.name) ? `name=${args === null || args === void 0 ? void 0 : args.name} ` : "";
         execString += (args === null || args === void 0 ? void 0 : args.description) ? `description=${args === null || args === void 0 ? void 0 : args.description} ` : "";
         execString += (args === null || args === void 0 ? void 0 : args.image) ? `image=${args === null || args === void 0 ? void 0 : args.image}` : "";
+        execString += (args === null || args === void 0 ? void 0 : args.remove) ? `removesource=${args === null || args === void 0 ? void 0 : args.remove}` : "";
         exec(execString);
     }
     catch (error) {

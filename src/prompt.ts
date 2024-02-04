@@ -87,6 +87,18 @@ const question7 = () => {
     })
 }
 
+const question8 = () => {
+    return new Promise((resolve, reject) => {
+        rl.question('Do you want to remove source files after randomization. This will permanently delete your files from source directory you provided (default: false): ', (answer: string) => {
+            if (!answer) {
+                answer = "false";
+            }
+            args.remove = answer;
+            resolve("");
+        })
+    })
+}
+
 const main = async () => {
     try {
         await question1();
@@ -96,7 +108,8 @@ const main = async () => {
         await question5();
         await question6();
         await question7();
-        
+        await question8();
+
         let execString = "npm run start -- ";
         execString += args?.from ? `from=${args?.from} ` : "";
         execString += args?.to ? `to=${args?.to} ` : "";
@@ -105,6 +118,7 @@ const main = async () => {
         execString += args?.name ? `name=${args?.name} ` : "";
         execString += args?.description ? `description=${args?.description} ` : "";
         execString += args?.image ? `image=${args?.image}` : "";
+        execString += args?.remove ? `removesource=${args?.remove}` : "";
         exec(execString);
     } catch (error) {
         console.error(error)
