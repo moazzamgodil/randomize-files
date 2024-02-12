@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 declare const spawn: any, execSync: any;
 declare const readline: any;
 declare const exec: (commands: any) => void;

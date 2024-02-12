@@ -50,16 +50,16 @@ If you want to randomize both JSON and image files, please make sure, the counti
 #### Using (Passing Arguments)
 ```
 Command:
-npm run start -- from=[from count] to=[to count] json=[json folder OR path] images=[images folder OR path] name=[update name in metadata] description=[update description in metadata] image=[update image url path in metadata] removesource=[true OR false]
+npx randomize -- from=[from count] to=[to count] json=[json folder OR path] images=[images folder OR path] name=[update name in metadata] description=[update description in metadata] image=[update image url path in metadata] removesource=[true OR false]
 
 Example:
-npm run start -- from=1 to=1000 json=files/json name="Hello World" description="This is description" image="https://example.com/ipfs" removesource=false
+npx randomize -- from=1 to=1000 json=files/json name="Hello World" description="This is description" image="https://example.com/ipfs" removesource=false
 ```
 
 #### Using (Prompt)
 ```
 Command:
-npm run prompt
+npx randomize-prompt
 ```
 
 ## Build

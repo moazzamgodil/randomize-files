@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 'use strict'
 const { spawn, execSync } = require('child_process');
 const readline = require('readline');
@@ -120,8 +121,8 @@ const main = async () => {
         execString += args?.image ? `image=${args?.image}` : "";
         execString += args?.remove ? `removesource=${args?.remove}` : "";
         exec(execString);
-    } catch (error) {
-        console.error(error)
+    } catch (error: any) {
+        console.error(error.message)
     }
     rl.close()
 }

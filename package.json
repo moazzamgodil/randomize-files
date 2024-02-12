@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/moazzamgodil/randomize-files.git"
   },
+  "bin": {
+    "randomize-prompt": "./dist/prompt.js",
+    "randomize": "./dist/index.js"
+  },
   "author": "Moazzam Ahmed",
   "license": "ISC",
   "bugs": {

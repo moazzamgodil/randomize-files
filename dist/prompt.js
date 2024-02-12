@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 'use strict';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -118,7 +119,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
         exec(execString);
     }
     catch (error) {
-        console.error(error);
+        console.error(error.message);
     }
     rl.close();
 });
